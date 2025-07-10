@@ -1,0 +1,46 @@
+Endpoints in main.py:
+
+1. GET /fir-records
+   Description: Retrieves FIR (First Information Report) records based on date range or last 24 hours.
+
+2. GET /getnews
+   Description: Fetches news articles based on date range or last 24 hours.
+
+3. POST /uploadnews
+   Description: Uploads a news image with specified language (default: Hindi).
+
+4. POST /savesummary
+   Description: Saves a summary of news data.
+
+5. GET /police-station/name
+   Description: Retrieves police station name based on station, district, and state codes.
+
+6. GET /district/name
+   Description: Retrieves district name based on district and state codes.
+
+7. GET /extract-articles
+   Description: Extracts news articles based on date range or last 24 hours.
+
+8. GET /extract-keywords
+   Description: Automatically extracts keywords from news articles within a specified date range.
+
+9. GET /law-hi
+   Description: Retrieves a list of laws in Hindi.
+
+10. GET /generate-report
+    Description: Generates a final summary report based on date range or last 24 hours.
+
+11. GET /print-report
+    Description: Prints a report for a specific date.
+
+12. GET /getnews/by-id
+    Description: Retrieves news by a specific upload ID.
+
+13. GET /extract-single-news
+    Description: Extracts information from a single news article by upload ID.
+
+14. GET /news_keywords
+    Description: Extracts keywords from a news article by upload ID.
+
+15. POST /extract_keywords_from_image
+    Description: Extracts keywords from an uploaded image file.
