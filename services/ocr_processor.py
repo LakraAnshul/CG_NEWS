@@ -8,7 +8,15 @@ import base64
 import numpy as np
 
 # === TESSERACT CONFIGURATION ===
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+import pytesseract
+import shutil
+
+# Automatically find tesseract path if available
+if shutil.which("tesseract"):
+    pytesseract.pytesseract.tesseract_cmd = shutil.which("tesseract")
+
+# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 custom_config = r'--oem 3 --psm 1 -l hin'
 
 # === TEXT CLEANING FUNCTION ===
