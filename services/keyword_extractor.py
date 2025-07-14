@@ -77,10 +77,9 @@ import stanza
 
 
 # nlp = stanza.Pipeline('hi', processors='tokenize,ner',download_method=None)
-
 import stanza
-stanza.download('hi', dir='./stanza_models')
-nlp = stanza.Pipeline('hi', processors='tokenize,ner', dir='./stanza_models')
+nlp = stanza.Pipeline('hi', processors='tokenize,ner')
+
 
 
 def extract_date(text):
