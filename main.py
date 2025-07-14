@@ -725,6 +725,10 @@ async def extract_keywords_from_image(file: UploadFile = File(...)):
             "newsHeading": heading
         }
 
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Image keyword extraction failed: {str(e)}")
+
+
 if __name__ == "__main__":
     import os
     import uvicorn
@@ -733,6 +737,3 @@ if __name__ == "__main__":
 
 
         return JSONResponse(content=response_json)
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Image keyword extraction failed: {str(e)}")
