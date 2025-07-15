@@ -729,3 +729,10 @@ async def extract_keywords_from_image(file: UploadFile = File(...)):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Image keyword extraction failed: {str(e)}")
+
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+    port = int(os.environ.get("PORT", 8080))  # Use Cloud Run’s expected port
+    uvicorn.run(app, host="0.0.0.0", port=port)
