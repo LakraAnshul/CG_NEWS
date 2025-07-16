@@ -1,34 +1,17 @@
-# Dockerfile
+# Use Python image
 FROM python:3.10-slim
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    tesseract-ocr \
-    libglib2.0-0 \
-    libsm6 \
-    libxrender1 \
-    libxext6 \
-    libgl1-mesa-glx \
-    poppler-utils \
-    && rm -rf /var/lib/apt/lists/*
-
-# Set work directory
+# Set working directory
 WORKDIR /app
 
-# Copy project files
-COPY . /app
+# Copy your code
+COPY . .
 
-# Install Python dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Make start.sh executable
-RUN chmod +x start.sh
+# Expose port
+EXPOSE 8080
 
-# Command to run the app
-CMD ["bash", "start.sh"]
+# Run your app
+CMD ["python", "main.py"]
